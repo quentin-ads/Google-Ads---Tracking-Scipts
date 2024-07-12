@@ -1,0 +1,38 @@
+  <script>
+  // Fonction pour obtenir la valeur d'un paramètre d'URL
+  function getQueryParam(param) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // Fonction pour remplir le champ de formulaire avec l'ID gclid
+  function populateGclidField() {
+    var gclid = getQueryParam('gclid');
+    if (gclid) {
+      var gclidField = document.getElementById('gclid');
+      if (gclidField) {
+        gclidField.value = gclid;
+      }
+    }
+  }
+
+  // Appeler la fonction dès que la page est chargée
+  document.addEventListener('DOMContentLoaded', populateGclidField);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Sélectionne tous les éléments dont la classe contient 'button'
+    var buttons = document.querySelectorAll('[class*="button"]');
+    var gclidTrigger = document.getElementById('gclid_trigger');
+
+    // Ajoute un gestionnaire de clic à chaque bouton
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        if (gclidTrigger) {
+          gclidTrigger.click();
+        }
+      });
+    });
+  });
+</script>
