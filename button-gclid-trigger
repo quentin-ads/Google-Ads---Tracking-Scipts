@@ -1,4 +1,10 @@
-  <script>
+// Créez un formulaire caché sur votre landing page puis ajoutez y un champ de saisie. Donnez lui l'ID "gclid".
+Ajoutez un bouton au formulaire avec une ID = gclid_trigger
+Renommez les classes des boutons d'appel = call_button
+Copiez le script ci-dessous. Collez dans before_body.
+
+
+<script>
   // Fonction pour obtenir la valeur d'un paramètre d'URL
   function getQueryParam(param) {
     var urlParams = new URLSearchParams(window.location.search);
@@ -23,7 +29,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Sélectionne tous les éléments dont la classe contient 'button'
-    var buttons = document.querySelectorAll('[class*="button"]');
+    var buttons = document.querySelectorAll('[class*="call_button"]');
     var gclidTrigger = document.getElementById('gclid_trigger');
 
     // Ajoute un gestionnaire de clic à chaque bouton
